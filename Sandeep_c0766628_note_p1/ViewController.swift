@@ -27,11 +27,11 @@ class ViewController: UIViewController,UITableViewDataSource, UITabBarDelegate {
     }
     //enabling the edit mode cause delet button to be visible for all the cells .
     //disable the button by implementing these methods
-    /* func tableView(_tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle{
+    func tableView(_tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle{
      return .none}
      func tableView(_ tableView: UITableView, shoundIndentWhileEditingRowAt indexPath: IndexPath) -> Bool{
      return false}
-     */
+     
     //creating cell in th table view
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
