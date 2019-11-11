@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController,UITableViewDataSource, UITabBarDelegate {
     //creating array to hold user input
+   
     var folders : [String] = []
     var count : Int = 1
     @IBOutlet weak var newFolderButton: UIButton!
@@ -71,9 +72,9 @@ class ViewController: UIViewController,UITableViewDataSource, UITabBarDelegate {
     }
     // swaping the cells after pressing edit bar button on the top right
     @IBAction func startEditing(_ sender: UIBarButtonItem) {
+    
         isEditing = !isEditing
         self.tableView.isEditing = !self.tableView.isEditing
-        
     }
         func tableView(_ tableView: UITableView, canMoveRowAt IndexPath: IndexPath) -> Bool {
         return true
@@ -84,16 +85,11 @@ class ViewController: UIViewController,UITableViewDataSource, UITabBarDelegate {
         let rowToMove = folders[sourceIndexPath.row]
         folders.remove(at: sourceIndexPath.row)
         folders.insert(rowToMove, at: destinationIndexPath.row)
-    }
-    //seting edit button to done
-        func setEditing(editing: Bool, animated: Bool){
-            super .setEditing(true, animated: true)
-            if(self.isEditing)
-            {
-                self.editButtonItem.title = "edit"
-            }
-            else{
-                self.editButtonItem.title = "done"}}}
+}
+    
+}
+
+
 
 
 
