@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				EBB2469223788F1A007E2803 /* AppDelegate.swift */,
+				9B1033692379DCA2002CAFEE /* noteTableViewController.swift */,
 				EBB2469623788F1B007E2803 /* Main.storyboard */,
 				EBB2469923788F26007E2803 /* Assets.xcassets */,
 				EBB2469B23788F26007E2803 /* LaunchScreen.storyboard */,
 				EBB2469E23788F26007E2803 /* Info.plist */,
-				9B1033692379DCA2002CAFEE /* noteTableViewController.swift */,
 			);
 			path = Sandeep_c0766628_note_p1;
 			sourceTree = "<group>";
