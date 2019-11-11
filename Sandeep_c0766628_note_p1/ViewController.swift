@@ -24,10 +24,11 @@ class ViewController: UIViewController,UITableViewDataSource, UITabBarDelegate {
         self.tableView.isEditing = false
         //navigation on right of the row
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
-    //enabling the edit mode cause delet button to be visible for all the cells .
+    //enabling the edit mode cause delete button to be visible for all the cells .
     //disable the button by implementing these methods
-    func tableView(_tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle{
+   func tableView(_tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle{
      return .none}
      func tableView(_ tableView: UITableView, shoundIndentWhileEditingRowAt indexPath: IndexPath) -> Bool{
      return false}
@@ -48,6 +49,7 @@ class ViewController: UIViewController,UITableViewDataSource, UITabBarDelegate {
     // after pressing new folder getting the folder name from user
     @IBAction func newFolderPressed(_ sender: UIButton)
     {
+        
         let alert = UIAlertController(title: "New Folder", message: "Enter a name for this folder", preferredStyle: .alert)
         alert.addTextField {(UITextField) in
         }
@@ -69,12 +71,11 @@ class ViewController: UIViewController,UITableViewDataSource, UITabBarDelegate {
     }
     // swaping the cells after pressing edit bar button on the top right
     @IBAction func startEditing(_ sender: UIBarButtonItem) {
-        //isEditing = !isEditing}
-        
-        
+        isEditing = !isEditing
         self.tableView.isEditing = !self.tableView.isEditing
+        
     }
-    func tableView(_ tableView: UITableView, canMoveRowAt IndexPath: IndexPath) -> Bool {
+        func tableView(_ tableView: UITableView, canMoveRowAt IndexPath: IndexPath) -> Bool {
         return true
         
     }
@@ -84,6 +85,15 @@ class ViewController: UIViewController,UITableViewDataSource, UITabBarDelegate {
         folders.remove(at: sourceIndexPath.row)
         folders.insert(rowToMove, at: destinationIndexPath.row)
     }
-    
-}
+    //seting edit button to done
+        func setEditing(editing: Bool, animated: Bool){
+            super .setEditing(true, animated: true)
+            if(self.isEditing)
+            {
+                self.editButtonItem.title = "edit"
+            }
+            else{
+                self.editButtonItem.title = "done"}}}
+
+
 
