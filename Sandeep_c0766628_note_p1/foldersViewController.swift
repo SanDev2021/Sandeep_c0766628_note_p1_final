@@ -25,7 +25,7 @@ class FoldersViewController: UIViewController
 {
     
     @IBOutlet private weak var editButton: UIBarButtonItem!
-    // arrray to hold the folders
+    // array to hold the folders
     var Folders = [NotesFolder]()
     @IBOutlet private weak var tableView: UITableView!
     

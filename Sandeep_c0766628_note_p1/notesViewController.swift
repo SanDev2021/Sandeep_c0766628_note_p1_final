@@ -109,7 +109,7 @@ extension NotesViewController: UITableViewDataSource
         return cell
     }
 }
-
+// table view for notes cell configration
 extension NotesViewController: UITableViewDelegate
 {
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)

@@ -19,15 +19,11 @@ class NoteViewController: UIViewController
 {
     var note = String()
     @IBOutlet private weak var textView: UITextView!
-    
+    weak var delegate: NoteViewControllerDelegate?
     var isToEdit = false
     var index = Int()
-    
-    weak var delegate: NoteViewControllerDelegate?
-    
-    override func viewDidLoad() {
+ override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         self.textView.text = note
         self.textView.becomeFirstResponder()
@@ -42,9 +38,12 @@ class NoteViewController: UIViewController
             return
         }
         
-        if isToEdit {
+        if isToEdit
+        {
             self.delegate?.editedNotes(note: text, index: index)
-        } else {
+        }
+        else
+        {
             self.delegate?.addedNotes(note: text)
         }
     }

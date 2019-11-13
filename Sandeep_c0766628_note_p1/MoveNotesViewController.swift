@@ -18,7 +18,7 @@ class MoveNotesViewController: UIViewController
 {
     
     @IBOutlet private weak var tableView: UITableView!
-    
+    //array to hold moved notes to sprcific folder
     var arrayFolders = [NotesFolder]()
     var arraySelectedNotes = [String]()
     
@@ -39,7 +39,7 @@ class MoveNotesViewController: UIViewController
     }
     
 }
-//moving notes after preesing more button
+//moving notes after pressing (more) button
 
 extension MoveNotesViewController: UITableViewDataSource
 {
@@ -63,14 +63,14 @@ extension MoveNotesViewController: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         tableView.deselectRow(at: indexPath, animated: true)
-        //allert to asking theuser if he wants to move the notes to desired folder
+        //allert to asking the user if he wants to move the notes to desired folder
         let alertController = UIAlertController(title: "Move to \(self.arrayFolders[indexPath.row].name)", message: "Are you sure?", preferredStyle: .alert)
-        
-        let moveAction = UIAlertAction(title: "Move", style: .default, handler: { alert -> Void in
+        //Move folders
+        let moveAction = UIAlertAction(title: "Move", style: .destructive, handler: { alert -> Void in
             self.delegate?.didMovedNotes(destinationFolder: self.arrayFolders[indexPath.row])
             self.dismiss(animated: true, completion: nil)
         })
-        
+        //if NO is slected by user
         let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: { (action : UIAlertAction!) -> Void in })
         
         alertController.addAction(cancelAction)
