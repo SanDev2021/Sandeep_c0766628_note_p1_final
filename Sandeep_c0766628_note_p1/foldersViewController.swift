@@ -150,7 +150,7 @@ extension FoldersViewController: UITableViewDelegate
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let notesViewController = storyBoard.instantiateViewController(withIdentifier: "NotesViewController") as! NotesViewController
         notesViewController.folder = Folders[indexPath.row]
-        notesViewController.folder = Folders
+        notesViewController.arrayFolders = Folders
         notesViewController.delegate = self
         self.navigationController?.pushViewController(notesViewController, animated: true)
     }

@@ -30,7 +30,7 @@
         <!--Folders View Controller-->
         <scene sceneID="lun-sB-YGv">
             <objects>
-                <viewController id="76J-ln-2DF" customClass="FoldersViewController" customModule="Palvi_c0762152_note_p1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="76J-ln-2DF" customClass="FoldersViewController" customModule="Sandeep_c0766628_note_p1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nxo-HD-v2s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="2Ui-K4-8eJ" customClass="FoldersTableViewCell" customModule="Palvi_c0762152_note_p1" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="2Ui-K4-8eJ" customClass="FoldersTableViewCell" customModule="Sandeep_c0766628_note_p1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Ui-K4-8eJ" id="pAB-l2-BoV">
@@ -110,7 +110,7 @@
                     <connections>
                         <outlet property="editButton" destination="IDE-CB-89W" id="V6Y-jh-FeW"/>
                         <outlet property="tableView" destination="Ai7-bq-ZTm" id="IPc-bC-OzO"/>
-                        <segue destination="OSe-0p-Fgu" kind="show" id="VNu-XC-NJa"/>
+                        <segue destination="OSe-0p-Fgu" kind="show" identifier="foldertonotes" id="VNu-XC-NJa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyr-No-Bu1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -120,7 +120,7 @@
         <!--Notes View Controller-->
         <scene sceneID="lMd-8l-KOi">
             <objects>
-                <viewController storyboardIdentifier="NotesViewController" id="OSe-0p-Fgu" customClass="NotesViewController" customModule="Palvi_c0762152_note_p1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotesViewController" id="OSe-0p-Fgu" customClass="NotesViewController" customModule="Sandeep_c0766628_note_p1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bOm-5X-VzX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,19 +150,19 @@
                                 <items>
                                     <barButtonItem enabled="NO" systemItem="trash" id="QMB-5M-104">
                                         <connections>
-                                            <action selector="methodDeleteNotes:" destination="OSe-0p-Fgu" id="I3a-i1-AbY"/>
+                                            <action selector="DeleteNotes:" destination="OSe-0p-Fgu" id="vWu-6f-vFD"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem enabled="NO" systemItem="action" id="OZw-V5-43q">
                                         <connections>
-                                            <action selector="methodMoveNotesToFolder:" destination="OSe-0p-Fgu" id="Whx-Pa-efN"/>
+                                            <action selector="MoveNotesToFolder:" destination="OSe-0p-Fgu" id="BcT-ae-GgY"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="COU-4l-vrV"/>
                                     <barButtonItem systemItem="compose" id="VqA-gZ-nuV">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <action selector="methodCreateNewNotes:" destination="OSe-0p-Fgu" id="IHf-l1-OZD"/>
+                                            <action selector="CreateNewNotes:" destination="OSe-0p-Fgu" id="BF4-yP-qSg"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -184,7 +184,7 @@
                         <barButtonItem key="rightBarButtonItem" title="MORE" id="4RR-Jg-ACB">
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="methodToEnableDeleteAndMoveButton:" destination="OSe-0p-Fgu" id="jJZ-wO-Pef"/>
+                                <action selector="EnableDeleteAndMoveButton:" destination="OSe-0p-Fgu" id="HRj-ZU-gPx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -192,7 +192,7 @@
                         <outlet property="deleteButton" destination="QMB-5M-104" id="leq-SL-fH1"/>
                         <outlet property="moveNotesButton" destination="OZw-V5-43q" id="aBp-Q2-wyy"/>
                         <outlet property="tableView" destination="Lvv-W8-Qm5" id="KKW-li-hpX"/>
-                        <segue destination="Fxk-yO-CJv" kind="show" id="zps-jx-cRX"/>
+                        <segue destination="Fxk-yO-CJv" kind="show" identifier="notestomovefolder" id="zps-jx-cRX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2So-Ta-5Xj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -202,7 +202,7 @@
         <!--Move Notes View Controller-->
         <scene sceneID="w3I-Lr-k0t">
             <objects>
-                <viewController storyboardIdentifier="MoveNotesViewController" id="Fxk-yO-CJv" customClass="MoveNotesViewController" customModule="Palvi_c0762152_note_p1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoveNotesViewController" id="Fxk-yO-CJv" customClass="MoveNotesViewController" customModule="Sandeep_c0766628_note_p1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ddE-ZY-bNr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,7 +256,7 @@
         <!--Note View Controller-->
         <scene sceneID="BVt-1l-5Qp">
             <objects>
-                <viewController storyboardIdentifier="NoteViewController" id="zIr-zD-etv" customClass="NoteViewController" customModule="Palvi_c0762152_note_p1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteViewController" id="zIr-zD-etv" customClass="NoteViewController" customModule="Sandeep_c0766628_note_p1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5y2-E6-W5a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -11,7 +11,7 @@ import UIKit
 
 protocol MoveNotesViewControllerDelegate: class
 {
-    func didMovedNotes(destinationFolder: Folder)
+    func didMovedNotes(destinationFolder: NotesFolder)
 }
 
 class MoveNotesViewController: UIViewController
@@ -19,7 +19,7 @@ class MoveNotesViewController: UIViewController
     
     @IBOutlet private weak var tableView: UITableView!
     
-    var arrayFolders = [Folder]()
+    var arrayFolders = [NotesFolder]()
     var arraySelectedNotes = [String]()
     
     weak var delegate: MoveNotesViewControllerDelegate?
@@ -39,6 +39,7 @@ class MoveNotesViewController: UIViewController
     }
     
 }
+//moving notes after preesing more button
 
 extension MoveNotesViewController: UITableViewDataSource
 {
@@ -62,7 +63,7 @@ extension MoveNotesViewController: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        //allert to asking theuser if he wants to move the notes to desired folder
         let alertController = UIAlertController(title: "Move to \(self.arrayFolders[indexPath.row].name)", message: "Are you sure?", preferredStyle: .alert)
         
         let moveAction = UIAlertAction(title: "Move", style: .default, handler: { alert -> Void in
