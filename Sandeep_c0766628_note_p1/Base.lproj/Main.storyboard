@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ai7-bq-ZTm">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="660"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="2Ui-K4-8eJ" customClass="FoldersTableViewCell" customModule="Sandeep_c0766628_note_p1" customModuleProvider="target">
@@ -72,13 +72,13 @@
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNX-gi-jFs">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="800" width="414" height="62"/>
                                 <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="kv7-k5-1rN">
                                         <color key="tintColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </barButtonItem>
-                                    <barButtonItem systemItem="organize" id="erQ-Ik-5AV">
+                                    <barButtonItem image="icn-folder-add-512" id="erQ-Ik-5AV">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="createNewFolder:" destination="76J-ln-2DF" id="RFi-rW-tWD"/>
@@ -126,7 +126,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lvv-W8-Qm5">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="629"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="EAc-Oz-qoV">
@@ -145,21 +145,21 @@
                                     <outlet property="delegate" destination="OSe-0p-Fgu" id="atd-fB-8Km"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hep-JH-Vt5">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="hep-JH-Vt5">
+                                <rect key="frame" x="0.0" y="769" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem enabled="NO" systemItem="trash" id="QMB-5M-104">
+                                    <barButtonItem enabled="NO" image="del" id="QMB-5M-104">
                                         <connections>
                                             <action selector="DeleteNotes:" destination="OSe-0p-Fgu" id="vWu-6f-vFD"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem enabled="NO" systemItem="action" id="OZw-V5-43q">
+                                    <barButtonItem enabled="NO" image="move" id="OZw-V5-43q">
                                         <connections>
                                             <action selector="MoveNotesToFolder:" destination="OSe-0p-Fgu" id="BcT-ae-GgY"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="COU-4l-vrV"/>
-                                    <barButtonItem systemItem="compose" id="VqA-gZ-nuV">
+                                    <barButtonItem image="compose" springLoaded="YES" id="VqA-gZ-nuV">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="CreateNewNotes:" destination="OSe-0p-Fgu" id="BF4-yP-qSg"/>
@@ -180,14 +180,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9Wc-kO-jvk"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="G0w-OM-z4E"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="RkR-tg-RDs">
-                        <barButtonItem key="rightBarButtonItem" title="MORE" id="4RR-Jg-ACB">
+                        <barButtonItem key="rightBarButtonItem" image="more button" style="done" id="4RR-Jg-ACB">
+                            <inset key="imageInsets" minX="29" minY="-2" maxX="-134" maxY="0.0"/>
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="EnableDeleteAndMoveButton:" destination="OSe-0p-Fgu" id="HRj-ZU-gPx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="deleteButton" destination="QMB-5M-104" id="leq-SL-fH1"/>
                         <outlet property="moveNotesButton" destination="OZw-V5-43q" id="aBp-Q2-wyy"/>
@@ -208,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CIS-ef-uul">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIdentifier" id="AcD-Go-mU8">
@@ -287,4 +292,11 @@
             <point key="canvasLocation" x="891" y="-625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="compose" width="35" height="35"/>
+        <image name="del" width="38" height="38"/>
+        <image name="icn-folder-add-512" width="57" height="57"/>
+        <image name="more button" width="1200" height="1200"/>
+        <image name="move" width="28" height="28"/>
+    </resources>
 </document>
